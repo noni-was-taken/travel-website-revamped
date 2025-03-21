@@ -12,12 +12,46 @@
     </head>
 
     <body>
-        <p>
-            test test
-        </p>
+            <div class="col header">
+                <nav class="row header-navigation">
+                    <a class="col" href="index.html" style="text-decoration: none; color: whitesmoke;">HOME</a>
+                    <a class="col href="about.html" style="text-decoration: none; color: whitesmoke;">ABOUT US</a>
+                    <a class="col href="gallery.html" style="text-decoration: none; color: whitesmoke;">GALLERY</a>
+                    <a class="col" href="#" style="text-decoration: none; color: whitesmoke;">SERVICES</a>
+                    <a class="col" href="contact.html" style="text-decoration: none; color: whitesmoke;">CONTACT US</a>
+                </nav>
+            </div>
+
+
+
         <style>
             p, h1, h2, h3, a{
                 font-family: "Lexend", sans-serif
+            }
+            .header{
+                height: 7.4rem;
+                background-color: #32cd32;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .header-navigation{
+                display: flex;
+                height: 100%;
+                width: 49rem;
+                justify-content: center;
+                align-items: center;
+            }
+            .header-navigation a{
+                display: flex;
+                height: 100%;
+                align-items: center;
+                font-size: 1.3rem;
+                justify-content: center;
+            }
+            .header-navigation a:hover{
+                transition: background-color 0.3s ease;
+                background-color: #228b22;
             }
         </style>
 

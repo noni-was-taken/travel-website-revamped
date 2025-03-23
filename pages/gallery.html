@@ -54,14 +54,94 @@
                 background-color: #228b22;
             }
         </style>
-        <div class="carousel-item">
-            <img src="/image/gallery1.jpeg" alt="pic1">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>test</h5>
-              <p>test</p>
-            </div>
-          </div>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<div class="col-xl-8 col-md-8 col-xs-8 carousel-container">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="/image/gallery1.jpeg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 1</h5>
+                    <p>Caption for Slide 1.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/image/gallery2.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 2</h5>
+                    <p>Caption for Slide 2.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/image/gallery3.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 3</h5>
+                    <p>Caption for Slide 3.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/image/gallery4.jpg" alt="Fourth slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 4</h5>
+                    <p>Caption for Slide 4.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/image/gallery5.jpeg" alt="Fifth slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 5</h5>
+                    <p>Caption for Slide 5.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="/image/gallery6.jpeg" alt="Sixth slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Title for Slide 6</h5>
+                    <p>Caption for Slide 6.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+        <style>
+            .carousel-container{
+                height: 60vh;
+                margin: auto;
+                margin-top: 5vh;
+            }
+            h5, p{
+                font-weight: bold;
+                text-shadow: -1px -1px 0 #000,1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;
+            }
+        </style>
+
+    <div class="col-xl-12 col-mg-12 col-xs-12 footer">
+        <p>&copy; 2025 LINEAR. All rights reserved.</p>
+    </div>
+    <style>
+        .footer{
+            background-color: black;
+            height: 5vh;
+            text-align: center;
+            margin-top: 18vh;
+        }
+        .footer p{
+            color: #FFFFFF;
+            font-size: 2vh;
+        }
+    </style>
+
+          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -15,8 +15,8 @@
             <div class="col header">
                 <nav class="row header-navigation">
                     <a class="col" href="index.html" style="text-decoration: none; color: whitesmoke;">HOME</a>
-                    <a class="col href="about.html" style="text-decoration: none; color: whitesmoke;">ABOUT US</a>
-                    <a class="col href="gallery.html" style="text-decoration: none; color: whitesmoke;">GALLERY</a>
+                    <a class="col" href="about.html" style="text-decoration: none; color: whitesmoke;">ABOUT US</a>
+                    <a class="col" href="gallery.html" style="text-decoration: none; color: whitesmoke;">GALLERY</a>
                     <a class="col" href="#" style="text-decoration: none; color: whitesmoke;">SERVICES</a>
                     <a class="col" href="contact.html" style="text-decoration: none; color: whitesmoke;">CONTACT US</a>
                 </nav>
@@ -56,7 +56,7 @@
         </style>
 
         <div class="col-12 picture-container">
-            <img class="home-picture" src="image/beach.jpg">
+            <img class="img-fluid home-picture" src="../image/beach.jpg">
         </div>
 
         <style>
@@ -74,9 +74,9 @@
             }
         </style>
 
-        <div class="col-6 about-container">
-            <h1 style="font-size:7vh ;">Welcome to Linear!</h1>
-            <p style="font-size: 3vh; margin-top: 10%;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam ex corrupti assumenda cupiditate ullam id, cum iusto tempore aperiam perferendis. Consectetur sit laborum exercitationem tempore eveniet earum repellat illo aliquam!</p>
+        <div class="col-xl-6 col-mg-6 col-xs-6 about-container">
+            <h1 class="display-1">Welcome to Linear!</h1>
+            <p  class="fs-3 text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam ex corrupti assumenda cupiditate ullam id, cum iusto tempore aperiam perferendis. Consectetur sit laborum exercitationem tempore eveniet earum repellat illo aliquam!</p>
         </div>
 
         <style>
@@ -96,15 +96,15 @@
             }
         </style>
 
-        <div class="col-6 home-gallery-container">
+        <div class="col-xl-6 col-mg-6 col-xs-6 home-gallery-container">
             <h1 style="text-align: center; font-size: 7vh;">Gallery</h1>
             <div class="home-content-wrapper">
-            <div class="col-5 home-pictures">
-                <img src="image/placeholder.jpg">
-                <img src="image/placeholder.jpg">
-                <img src="image/placeholder.jpg">
+            <div class="col-xl-5 col-mg-5 col-xs-5 home-pictures">
+                <img src="/image/placeholder.jpg">
+                <img src="/image/placeholder.jpg">
+                <img src="/image/placeholder.jpg">
             </div>
-               <div class="col-6 home-pictures-captions">
+               <div class="col-xl-6 col-mg-6 col-xs-6  home-pictures-captions">
                     <div class="caption">
                         <h1>Title</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsum corporis excepturi amet repellendus est recusandae rem corrupti, laborum dolore quibusdam magnam quae ex fugiat cum. Dicta corrupti esse nihil?</p>
@@ -165,8 +165,62 @@
             }
         </style>
     
-    <div>
-        
+    <div class="col-xl-12 col-mg-12 col-xs-12 service-container">
+        <h1 style="text-align: center; font-size: 7vh;">Services</h1>
+        <div class="col-xl-12 col-mg-12 col-xs-12 services-parent">
+            <div class="col-xl-3 col-mg-3 col-xs-3 services">
+                <img src="/image/themepark.jpg">
+                <h2 class="h2">Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p> 
+            </div>
+            <div class="col-xl-3 col-mg-3 col-xs-3 services">
+                <img src="/image/tour.jpg">
+                <h2 class="h2">Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p>
+            </div>
+            <div class="col-xl-3 col-mg-3 col-xs-3 services">
+                <img src="/image/City.jpg">
+                <h2 class="h2">Title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p>
+            </div>
+        </div>
     </div>
+
+    <style>
+        .service-container{
+            background-color: #ff746c;
+            height: 70vh;
+        }
+        .services-parent{
+            height: 50vh;
+            display: flex;
+            justify-content: space-around;
+        }
+        .services{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .services img{
+            width: 80%;
+            height: auto;
+            margin: auto;
+        }
+    </style>
+
+    <div class="col-xl-12 col-mg-12 col-xs-12 footer">
+        <p>&copy; 2025 LINEAR. All rights reserved.</p>
+    </div>
+        <style>
+            .footer{
+                background-color: black;
+                height: 5vh;
+                text-align: center;
+            }
+            .footer p{
+                color: #FFFFFF;
+                font-size: 2vh;
+            }
+        </style>
     </body>
 </html>

@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,26 +19,38 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Linear</a>
+                <a class="navbar-brand" href="index.php">Linear</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">HOME</a>
+                            <a class="nav-link" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">ABOUT US</a>
+                            <a class="nav-link" href="about-us.php">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                            <a class="nav-link" href="gallery.php">GALLERY</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">SERVICES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">CONTACT US</a>
+                            <a class="nav-link" href="contact-us.php">CONTACT US</a>
+                        </li>
+                            <li class="nav-item dropdown">
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            HI, <?php echo htmlspecialchars($_SESSION['first_name']); ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>
+                        </ul>
+                    <?php else: ?>
+                        <a class="nav-link" href="login-signup.php">LOGIN</a>
+                    <?php endif; ?>
                         </li>
                     </ul>
                 </div>
@@ -116,9 +133,9 @@
             <h1 style="text-align: center; font-size: 7vh;">Gallery</h1>
             <div class="home-content-wrapper">
             <div class="col-xl-5 col-mg-5 col-xs-5 home-pictures">
-                <img src="/image/placeholder.jpg">
-                <img src="/image/placeholder.jpg">
-                <img src="/image/placeholder.jpg">
+                <img src="../image/placeholder.jpg">
+                <img src="../image/placeholder.jpg">
+                <img src="../image/placeholder.jpg">
             </div>
                <div class="col-xl-6 col-mg-6 col-xs-6  home-pictures-captions">
                     <div class="caption">
@@ -185,17 +202,17 @@
         <h1 style="text-align: center; font-size: 7vh;">Services</h1>
         <div class="col-xl-12 col-mg-12 col-xs-12 services-parent">
             <div class="col-xl-3 col-mg-3 col-xs-3 services">
-                <img src="/image/themepark.jpg">
+                <img src="../image/themepark.jpg">
                 <h2 class="h2">Title</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p> 
             </div>
             <div class="col-xl-3 col-mg-3 col-xs-3 services">
-                <img src="/image/tour.jpg">
+                <img src="../image/tour.jpg">
                 <h2 class="h2">Title</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p>
             </div>
             <div class="col-xl-3 col-mg-3 col-xs-3 services">
-                <img src="/image/City.jpg">
+                <img src="../image/City.jpg">
                 <h2 class="h2">Title</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis corporis obcaecati modi pariatur, fuga quos! Quae animi deleniti corporis facilis eaque, illum nisi. Officiis qui impedit, fugit unde rerum iusto!</p>
             </div>
@@ -238,5 +255,7 @@
                 font-size: 2vh;
             }
         </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

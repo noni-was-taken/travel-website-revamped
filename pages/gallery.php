@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,28 +17,40 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Linear</a>
+                <a class="navbar-brand" href="index.php">Linear</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">HOME</a>
+                            <a class="nav-link" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">ABOUT US</a>
+                            <a class="nav-link" href="about-us.php">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                            <a class="nav-link" href="gallery.php">GALLERY</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">SERVICES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">CONTACT US</a>
+                            <a class="nav-link" href="contact-us.php">CONTACT US</a>
+                        </li>
+                            <li class="nav-item dropdown">
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            HI, <?php echo htmlspecialchars($_SESSION['first_name']); ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>
+                        </ul>
+                    <?php else: ?>
+                        <a class="nav-link" href="login-signup.php">LOGIN</a>
+                    <?php endif; ?>
                         </li>
                     </ul>
                 </div>
@@ -75,42 +92,42 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="/image/gallery1.jpeg" alt="First slide">
+                <img class="d-block w-100" src="../image/gallery1.jpeg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 1</h5>
                     <p>Caption for Slide 1.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/image/gallery2.jpg" alt="Second slide">
+                <img class="d-block w-100" src="../image/gallery2.jpg" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 2</h5>
                     <p>Caption for Slide 2.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/image/gallery3.jpg" alt="Third slide">
+                <img class="d-block w-100" src="../image/gallery3.jpg" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 3</h5>
                     <p>Caption for Slide 3.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/image/gallery4.jpg" alt="Fourth slide">
+                <img class="d-block w-100" src="../image/gallery4.jpg" alt="Fourth slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 4</h5>
                     <p>Caption for Slide 4.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/image/gallery5.jpeg" alt="Fifth slide">
+                <img class="d-block w-100" src="../image/gallery5.jpeg" alt="Fifth slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 5</h5>
                     <p>Caption for Slide 5.</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="/image/gallery6.jpeg" alt="Sixth slide">
+                <img class="d-block w-100" src="../image/gallery6.jpeg" alt="Sixth slide">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Title for Slide 6</h5>
                     <p>Caption for Slide 6.</p>
@@ -159,5 +176,6 @@
 
           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

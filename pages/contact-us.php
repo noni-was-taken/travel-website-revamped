@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,28 +17,40 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Linear</a>
+                <a class="navbar-brand" href="index.php">Linear</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="home.html">HOME</a>
+                            <a class="nav-link" href="index.php">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about-us.html">ABOUT US</a>
+                            <a class="nav-link" href="about-us.php">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                            <a class="nav-link" href="gallery.php">GALLERY</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">SERVICES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact-us.html">CONTACT US</a>
+                            <a class="nav-link" href="contact-us.php">CONTACT US</a>
+                        </li>
+                            <li class="nav-item dropdown">
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            HI, <?php echo htmlspecialchars($_SESSION['first_name']); ?>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../php/logout.php">Logout</a></li>
+                        </ul>
+                    <?php else: ?>
+                        <a class="nav-link" href="login-signup.php">LOGIN</a>
+                    <?php endif; ?>
                         </li>
                     </ul>
                 </div>

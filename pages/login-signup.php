@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    include("../php/dbconn.php");
+
+
+
+?>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -19,15 +28,24 @@
             <div class="loginBox">
                 <h1>
                     LOGIN
-                    <form class="LoginInput">
+                    <form class="LoginInput" method="POST" action="../php/login.php">
                         <div class="form-group col w-100">
                             <label for="inputName">Email</label>
-                            <input type="fullname" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email"
+                            value="<?php echo isset($_SESSION['login_form_data']['email']) ? htmlspecialchars($_SESSION['login_form_data']['email']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
                         </div>
+                        <?php if (isset($_SESSION['login_errors'])): ?>
+                        <div class="alert alert-danger">
+                            <?php foreach ($_SESSION['login_errors'] as $error): ?>
+                                <p><?php echo htmlspecialchars($error); ?></p>
+                            <?php endforeach; ?>
+                            <?php unset($_SESSION['login_errors']); ?>
+                        </div>
+                        <?php endif; ?>
                         <a onclick="ForgotPass()">Forgot Email or Password?</a>
                         <button type="submit" class="btn btn-primary">LOGIN</button>
                     </form>
@@ -183,29 +201,40 @@
                 <h1>
                     SIGNUP
                 </h1>
-                    <form class="SignUpInput">
+                    <form class="SignUpInput" method="POST" action="../php/signup.php">
                         <div class="form-group col w-100">
                             <label for="inputName">First Name</label>
-                            <input type="fullname" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+                            <input type="text" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="First Name" name="firstName"
+                            value = "<?php echo isset($_SESSION['signup_form_data']['firstName']) ? htmlspecialchars($_SESSION['signup_form_data']['firstName']) : ''; ?>" required>
                         </div>
                         <div class="form-group col w-100">
                             <label for="inputName">Last Name</label>
-                            <input type="fullname" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Last Name">
+                            <input type="text" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Last Name" name="lastName"
+                            value="<?php echo isset($_SESSION['signup_form_data']['lastName']) ? htmlspecialchars($_SESSION['signup_form_data']['lastName']) : ''; ?>" required>
                         </div>
                         <div class="form-group col w-100">
                             <label for="inputName">Email</label>
-                            <input type="fullname" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" class="form-control full-width w-100" id="InputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email"
+                            value="<?php echo isset($_SESSION['signup_form_data']['email']) ? htmlspecialchars($_SESSION['signup_form_data']['email']) : ''; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="termsCheck" required>
                             <label class="form-check-label" for="exampleCheck1" style="display: inline-block; font-size: 0.8rem; width:auto;">Agree with the</label>
                             <a href="https://www.youtube.com/watch?v=KkGVmN68ByU&pp=ygUXcGxlYXNlIGhhdmUgbWVyY3kgb24gbWU%3D" style="font-size: 0.8rem; display:inline-block; width:auto;">Terms and Conditions?
                             </a>
                           </div>
+                          <?php if (isset($_SESSION['signup_errors'])): ?>
+                                <div class="alert alert-danger">
+                                <?php foreach ($_SESSION['signup_errors'] as $error): ?>
+                                <p><?php echo $error; ?></p>
+                                <?php endforeach; ?>
+                                <?php unset($_SESSION['signup_errors']); ?>
+                            </div>
+                    <?php endif; ?>
                         <button type="submit" class="btn btn-primary buton">SIGNUP</button>
                     </form>
             </div>

@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($errors)) {
         $_SESSION['signup_errors'] = $errors;
         $_SESSION['signup_form_data'] = $_POST;
+        header("Location: ../pages/login-signup.php");
         exit();
     }
 }

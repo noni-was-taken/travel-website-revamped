@@ -181,6 +181,13 @@
                 border-color: #ffffff;
                 transition: background-color 0.3s ease, color 0.3s;
             }
+            .loginBox .alert-danger {
+                margin-top: 10px;
+                padding: 5px 10px;
+                font-size: 0.8rem;
+                max-height: 80px;
+                overflow-y: auto;
+            }
         </style>
         <div class="SignUp">
             <div class="SignUpToggle">
@@ -372,6 +379,23 @@
                 }
                 .SignUp.toggled .form-check-label, .SignUp.toggled .form-check a{
                     margin-top: 2px;
+                }
+                .SignUp.toggled .signupBox .alert-danger {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80%;
+                    max-height: 100px;
+                    overflow-y: auto;
+                    margin: 0;
+                    padding: 10px;
+                    font-size: 0.8rem;
+                }
+    
+                .SignUp.toggled .signupBox {
+                    position: relative;
+                    padding-bottom: 120px; 
                 }
         </style>
         <style>
